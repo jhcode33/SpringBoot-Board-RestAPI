@@ -1,0 +1,36 @@
+server:
+  port: ${myapp.port:8989}
+  
+spring:
+  datasource:
+    #mariadb는 자신이 사용하고자 하는 스키마를 입력해야지 들어가짐.
+    url: jdbc:mariadb://localhost:3306/springboard
+    username: root
+    password: 1234
+    driver-class-name: org.mariadb.jdbc.Driver
+
+
+  jpa:
+    properties:
+      hibernate:
+        #언제부터인지 모르겠는데 []로 작성하는 형식으로 바뀌었음. key, value 형태로 작성되어지는 것으로 보여짐.
+        "[format_sql]": true
+        "[user_sql_cooments]": true
+        "[highlight_sql]": true
+
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    
+logging:
+  level:
+    org:
+      apache:
+        coyote:
+          http11: debug
+
+      hiberante:
+        SQL: debug
+
+    boardexample:
+      myboard: info
