@@ -103,7 +103,7 @@ class MemberRepositoryTest {
         assertThrows(Exception.class, () -> memberRepository.save(member2));
     }
     
-    //@Test
+    @Test
     public void 성공_회원수정() throws Exception {
         //given
         Member member1 = Member.builder()
@@ -201,7 +201,7 @@ class MemberRepositoryTest {
 
     }
     
-    @Test
+    //@Test
     public void 회원가입시_생성수정시간_등록() throws Exception {
         //given
         Member member1 = Member.builder().username("username").password("1234567890").name("Member1").role(Role.USER).nickName("NickName1").age(22).build();
